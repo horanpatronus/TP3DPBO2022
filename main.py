@@ -214,14 +214,15 @@ def showFacilities():
     # labelImg.pack()
     labelImg.grid(row=1, column=1)
     
-    # Cancel Button
+    # Backward, Cancel, dan Forward Button
     btn_prev = Button(top, text="<<", anchor="w", command=lambda: prevImage(), state=DISABLED)
     btn_prev.grid(row=1, column=0, padx=10, pady=10, sticky="w")
     btn_cancel = Button(top, text="Kembali", anchor="w", command=lambda:[top.destroy(), root.deiconify()])
     btn_cancel.grid(row=0, column=1, padx=10, pady=10, sticky="w")
     btn_next = Button(top, text=">>", anchor="w", command=lambda: nextImage(1))
     btn_next.grid(row=1, column=2, padx=10, pady=10, sticky="w")
-    
+
+# Untuk forward foto
 def nextImage(img_number):
     global labelImg
     global btn_prev
@@ -230,7 +231,8 @@ def nextImage(img_number):
     labelImg.grid_forget()
     labelImg = Label(top, image=img_list[img_number])
     labelImg.grid(row=1, column=1)
-    
+
+    # Backward, Cancel, dan Forward Button
     btn_prev = Button(top, text="<<", anchor="w", command=lambda: prevImage(img_number - 1))
     btn_prev.grid(row=1, column=0, padx=10, pady=10, sticky="w")
     btn_cancel = Button(top, text="Kembali", anchor="w", command=lambda:[top.destroy(), root.deiconify()])
@@ -241,6 +243,7 @@ def nextImage(img_number):
         btn_next = Button(top, text=">>", anchor="w", command=lambda: nextImage(img_number + 1))
     btn_next.grid(row=1, column=2, padx=10, pady=10, sticky="w")   
 
+# Untuk backward foto
 def prevImage(img_number):
     global labelImg
     global btn_prev
@@ -250,6 +253,7 @@ def prevImage(img_number):
     labelImg = Label(top, image=img_list[img_number])
     labelImg.grid(row=1, column=1)
 
+    # Backward, Cancel, dan Forward Button
     btn_cancel = Button(top, text="Kembali", anchor="w", command=lambda:[top.destroy(), root.deiconify()])
     btn_cancel.grid(row=0, column=1, padx=10, pady=10, sticky="w")
     btn_next = Button(top, text=">>", anchor="w", command=lambda: nextImage(img_number + 1))
@@ -259,6 +263,7 @@ def prevImage(img_number):
     else:
         btn_prev = Button(top, text="<<", anchor="w", command=lambda: prevImage(img_number - 1))
     btn_prev.grid(row=1, column=0, padx=10, pady=10, sticky="w")
+    
 def delAll():
     global mydb
     global dbcursor
