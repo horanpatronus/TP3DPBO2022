@@ -30,6 +30,7 @@ Repositori yang berisikan program Python GUI, untuk memenuhi tugas praktikum mat
 
 #### Video Demo Aplikasi
 
-https://user-images.githubusercontent.com/91965618/166948885-edf2d7c1-b224-4733-b025-84f239ee9075.mp4
+
+https://user-images.githubusercontent.com/91965618/166950983-dfa0bf08-7a93-485e-a992-3998864226a2.mp4
 
 
